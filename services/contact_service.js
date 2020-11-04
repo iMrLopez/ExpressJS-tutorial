@@ -1,4 +1,4 @@
-const contact_infrastruture = require('../ExpressJS-tutorial/infrastructure/contact_infrastructure')
+const contact_infrastruture = require('../infrastructure/contact_infrastructure')
 
 function obtenerContactoPorId(id) {
     if (id !== null) {

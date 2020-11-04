@@ -5,9 +5,9 @@ miRouter.get('/', (req, res) => {
     res.send('Lista de contactos')
 });
 
-miRouter.get('/:id', (req, res) => {
+miRouter.get('/:id', async (req, res) => {
     var id = req.param('id')
-    resultado = contact_service.obtenerContactoPorId(id);
+    resultado = await contact_service.obtenerContactoPorId(id);
     res.send(resultado);
 });
 
