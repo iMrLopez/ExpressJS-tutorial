@@ -6,7 +6,7 @@ const connectionConfig = {
 };
 
 const selectTodosContactos = `SELECT * FROM contacts`;
-const selectContactoPorId = `SELECT * FROM contacts where ID = :id`;
+const selectContactoPorId = 'SELECT * FROM contacts where ID = {0}';
 
 module.exports = {
     connectionConfig,
