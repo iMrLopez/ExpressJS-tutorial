@@ -7,7 +7,7 @@ async function obtenerContactoPorId(id) {
   var connection = mysql.createConnection(config.connectionConfig);
   await db.connect(connection);
   try {
-    resultado = await db.query(connection, (id)?config.selectContactoPorId:config.selectTodosContactos);
+    resultado = await db.query(connection, (id)? config.selectContactoPorId:config.selectTodosContactos);
   } catch (err) {
     //console.log(err)
   } finally {

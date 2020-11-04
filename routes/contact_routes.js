@@ -1,5 +1,6 @@
 var miRouter = require('express').Router()
 var contact_service = require('../services/contact_service');
+const miMiddleware = require('../middleware/logger');
 
 miRouter.get('/', (req, res) => {
     res.send('Lista de contactos')
