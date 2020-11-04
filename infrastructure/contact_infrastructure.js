@@ -1,28 +1,15 @@
 var mysql = require("mysql");
 const db = require("mysql-async-simple").makeDb();
+const config = require('../configuration/db');
 
 async function obtenerContactoPorId(id) {
-  let query;
   let resultado;
-  var connection = mysql.createConnection({
-    host: "localhost",
-    user: "contacts",
-    password: "contacts",
-    database: "contacts",
-  });
-
+  var connection = mysql.createConnection(config.connectionConfig);
   await db.connect(connection);
-
-  if (id) {
-    query = `SELECT * FROM contacts where ID = ${id}`;
-  } else {
-    query = `SELECT * FROM contacts`;
-  }
-
   try {
-    resultado = await db.query(connection, query);
+    resultado = await db.query(connection, (id)?config.selectContactoPorId:config.selectTodosContactos);
   } catch (err) {
-    resultado = { error: "error" };
+    //console.log(err)
   } finally {
     await db.close(connection);
     return JSON.stringify(resultado);
