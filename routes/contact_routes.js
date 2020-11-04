@@ -12,4 +12,18 @@ miRouter.get('/:id', async (req, res) => {
     res.send(resultado);
 });
 
+miRouter.post('/:id', miMiddleware.auth, async (req, res) => {
+    // TODO: logica para el POST
+    res.send(true);
+});
+
+miRouter.put('/:id', miMiddleware.auth, async (req, res) => {
+    // TODO: logica para el POST
+    res.send(true);
+});
+
+miRouter.delete('/:id', miMiddleware.auth, async (req, res) => {
+    // TODO: logica para el POST
+    res.send(true);
+});
 module.exports = miRouter
