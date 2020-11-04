@@ -26,4 +26,5 @@ miRouter.delete('/:id', miMiddleware.auth, async (req, res) => {
     // TODO: logica para el POST
     res.send(true);
 });
+
 module.exports = miRouter
